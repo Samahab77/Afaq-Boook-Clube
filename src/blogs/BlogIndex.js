@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {index, destroy} from './api'
 import { Link } from 'react-router-dom'
+import './blog.scss'
 
 
 class BlogsIndex extends Component {
@@ -35,18 +36,33 @@ class BlogsIndex extends Component {
     render (){
        
         return(
-            <div>
+            <div >
                 {this.state.blogs.map((blog, index) => (
                     
                     <div key={index}>
-                         <h2>{blog.title}</h2> 
+                    <div>
+                     <div className="blog-card">
+                            <img className="blog-img" src={blog.img} />
+                          <div className="text-overlay">
+                                <h2>{blog.title}</h2>
+                                    <Link to={`/blogs/${blog._id}`}> <h5>Read </h5></Link>
+                                    <p size="30" >{blog.text}</p> 
+                                    <Link to={`/blogs/${blog._id}`}> <h5>Read </h5></Link>
+                                    <button onClick={() => this.destroy(blog._id)}>Delete</button>
+                         {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales posuere felis non efficitur. Mauris mollis elit urna, id tempus... &nbsp;&nbsp;<a href="#" class="read-more">Read More</a></p> */}
+                            </div>
+                        </div>
+                         {/* <h2>{blog.title}</h2>  */}
                         {/* <p></p> */}
-                        <img src={blog.img} alt="img"/>
+                        {/* <img src={blog.img} alt="img"/> */}
                         {/* <p size="30" >{blog.text}</p> */}
-                        <Link to={`/blogs/${blog._id}`}> <h5>Read </h5></Link>
-                        <button onClick={() => this.destroy(blog._id)}>Delete</button>
+                        {/* <Link to={`/blogs/${blog._id}`}> <h5>Read </h5></Link> */}
+                       
+                   
                     </div>
-                ))}
+                       
+               </div>
+               ))}
             </div>
         )
     }

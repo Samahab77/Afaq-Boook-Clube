@@ -3,7 +3,7 @@ import { show } from './api';
 import { Link, Route } from 'react-router-dom'
 import CommentIndex from '../comments/CommentIndex'
 import CommentShow from '../comments/CommentShow'
-
+import './blog.scss'
 
 class BlogShow extends Component {
     state = {
@@ -27,14 +27,21 @@ class BlogShow extends Component {
         const id= this.state.blogs._id
         console.log("id", id)
         return (
-            <div>
-            <div>
-                <h1>{this.state.blogs.title}</h1>
+            <div >
+              
+                <div className="blogindex" >
                 <img src={this.state.blogs.img} alt="" />
-                <p>{this.state.blogs.text}</p>
-                <Link to={`/blogs/${id}/edit`}><button>Edit</button></Link>
 
+                <div className="xxxxxxxx">
+
+                        <h1>{this.state.blogs.title}</h1>
+                        {/* <img src={this.state.blogs.img} alt="" /> */}
+                        <p>{this.state.blogs.text}</p>
+                </div>
+                    <Link to={`/blogs/${id}/edit`}><button>Edit</button></Link>
             </div>
+                {/* <Link to={`/blogs/${id}/edit`}><button>Edit</button></Link> */}
+
             <div>
             <CommentIndex user={this.props.user} key={id} blogId={id}/>
             </div>

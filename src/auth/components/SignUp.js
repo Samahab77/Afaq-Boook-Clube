@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter,Link } from 'react-router-dom'
 
 import { signUp, signIn } from '../api'
 import messages from '../messages'
@@ -11,7 +11,10 @@ class SignUp extends Component {
     this.state = {
       email: '',
       password: '',
-      passwordConfirmation: ''
+      passwordConfirmation: '',
+      name: '',
+      city:'',
+      phone_num:''
     }
   }
 
@@ -21,7 +24,8 @@ class SignUp extends Component {
 
   onSignUp = event => {
     event.preventDefault()
-
+    // console.log(this.props)
+    // console.log(this.state)
     const { alert, history, setUser } = this.props
 
     signUp(this.state)
@@ -31,25 +35,34 @@ class SignUp extends Component {
       .then(() => history.push('/'))
       .catch(error => {
         console.error(error)
-        this.setState({ email: '', password: '', passwordConfirmation: '' })
+        this.setState({ email: '', password: '', passwordConfirmation: '', city: '', phone_num:'', name:''})
         alert(messages.signUpFailure, 'danger')
       })
   }
 
   render () {
-    const { email, password, passwordConfirmation } = this.state
+    const { city, name, email, password, passwordConfirmation, phone_num } = this.state
 
     return (
+      <div>
       <form className='auth-form' onSubmit={this.onSignUp}>
-        <h3>Sign Up</h3>
-
+        <h3>Sign Up as User</h3>
+        <label >User Name:</label>
+        <input
+          required
+          name="name"
+          value={name}
+          type="name"
+          placeholder="User Name:"
+          onChange={this.handleChange}
+        />
         <label htmlFor="email">Email</label>
         <input
           required
           name="email"
           value={email}
           type="email"
-          placeholder="Email"
+          placeholder="example@example.com"
           onChange={this.handleChange}
         />
         <label htmlFor="password">Password</label>
@@ -70,8 +83,29 @@ class SignUp extends Component {
           placeholder="Confirm Password"
           onChange={this.handleChange}
         />
+        <label >City:</label>
+        <input
+          required
+          name="city"
+          value={city}
+          type="city"
+          placeholder="city"
+          onChange={this.handleChange}
+        />
+        <label >phone_num</label>
+        <input
+          
+          name="phone_num"
+          value={phone_num}
+          type="phone_num"
+          placeholder="9665XXXXXXXX"
+          onChange={this.handleChange}
+        />
         <button type="submit">Sign Up</button>
+          <button ><Link to="/sign-in">Sign In</Link></button>
       </form>
+   
+ </div>
     )
   }
 }

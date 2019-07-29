@@ -1,0 +1,10 @@
+.commentIndex{
+width: 600px;
+}
+.comments{
+    text-align: left;
+
+}
+.comments h3{
+    /* border-bottom: 1px black solid; */
+}

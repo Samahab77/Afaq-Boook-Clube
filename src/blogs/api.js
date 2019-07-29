@@ -11,6 +11,13 @@ export const index = user => {
         }
     })
 }
+export const indexAll =() => {
+    return axios({
+        method: 'GET',
+        url: apiUrl + '/blogs/all',
+       
+    })
+}
 
 export const show = (user, blogId) => {
     return axios({
@@ -21,7 +28,12 @@ export const show = (user, blogId) => {
         }
     })
 }
-
+export const showAll = (blogId) => {
+    return axios({
+        method: 'GET',
+        url: apiUrl + `/blogs/all/${blogId}`,
+    })
+}
 export const create = (user, newBlog) => {
     return axios({
         method: 'POST',

@@ -1,9 +1,9 @@
 # Name of your APP
 
-
+Afaq Club Reader 
 
 ## Web Application Description 
-
+books club for women
 
 ---
 ## Prerequisites
@@ -31,8 +31,10 @@ $npm start
 
 
 ## Technologies
-
+react 
+node express 
 
 
 
 ## Developers
+Samah Bagido

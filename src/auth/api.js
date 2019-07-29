@@ -9,7 +9,26 @@ export const signUp = credentials => {
       credentials: {
         email: credentials.email,
         password: credentials.password,
-        password_confirmation: credentials.passwordConfirmation
+        password_confirmation: credentials.passwordConfirmation,
+        city: credentials.city,
+        name: credentials.name,
+        phone_num: credentials.phone_num
+      }
+    }
+  })
+}
+export const signUpAdmin = credentials => {
+  return axios({
+    method: 'POST',
+    url: apiUrl + '/sign-up/admin',
+    data: {
+      credentials: {
+        email: credentials.email,
+        password: credentials.password,
+        password_confirmation: credentials.passwordConfirmation,
+        city: credentials.city,
+        name: credentials.name,
+        phone_num: credentials.phone_num
       }
     }
   })
