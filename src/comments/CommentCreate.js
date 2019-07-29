@@ -37,7 +37,7 @@ class CommentCreate extends Component {
             <div>
                 <h3>Add New Comment</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <label>name:</label><br />
+                    <label><h4>Title:</h4></label><br />
                     <input onChange={this.handleChange} type="text" name="name" value={this.state.dataForm.name} /><br />
                     <label>Comment:</label><br />
                     <input onChange={this.handleChange} type="text" name="comment" value={this.state.dataForm.comment} /><br />

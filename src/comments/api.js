@@ -12,8 +12,21 @@ export const index = (user, blogId) => {
     })
 }
 
-
-
+export const show = (user, blogId, commentId) => {
+    return axios({
+        method: 'GET',
+        url: apiUrl + `/blogs/${blogId}/comments/${commentId}`,
+        headers: {
+            'Authorization': `Bearer ${user.token}`
+        }
+    })
+}
+export const showAllComment = (blogId) => {
+    return axios({
+        method: 'GET',
+        url: apiUrl + `/blogs/${blogId}/commentsAll`
+    })
+}
 export const create = (user, newCommint, blogId) => {
     return axios({
         method: 'POST',
