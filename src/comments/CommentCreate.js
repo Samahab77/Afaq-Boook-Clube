@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { create } from './api'
-// import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class CommentCreate extends Component {
     state = {
@@ -25,7 +25,9 @@ class CommentCreate extends Component {
         event.preventDefault();
         const newComment = this.state.dataForm
         const user = this.props.user
-        const blogId = this.props.blogId
+        // const blogId = this.props.blogId
+        const blogId = this.props.match.params.id;
+
         create(user, newComment, blogId)
             .then(() => alert('created'))
             .then(() => this.props.updateComment())
@@ -47,4 +49,4 @@ class CommentCreate extends Component {
         )
     }
 }
-export default CommentCreate
+export default withRouter(CommentCreate)

@@ -97,7 +97,8 @@ margin-bottom: 5%;
  		margin: 8px 0;
  		line-height: 1.25;
  		text-overflow: ellipsis;
- 		overflow: hidden;
+		 overflow: hidden;
+		//  text-align: left;
  	}
  	a {
  		color: #378AEE;
@@ -160,9 +161,24 @@ margin-bottom: 5%;
 .card-title {
 	text-align: left;
 }
+.card-title strong{
+		text-align: left;
+
+}
 .card-text{
 	text-align: left;
 }
+.card-text p {
+	  text-indent: 50px;
+
+
+
+}
 .card-img{
 	height: 300px;
+}
+.card .mb-3{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	text-align: left;
+
 }

@@ -18,6 +18,7 @@ import BlogsShowAll from './blogs/BlogShowAll'
 import SignUpAdmin from './auth/components/SignUpAdmin';
 import { Home } from './home/home';
 import Footer from './footer/Footer'
+import AboutUs from './AboutUs'
 
 class App extends Component {
   constructor () {
@@ -85,7 +86,10 @@ class App extends Component {
           )} />
           {/* <AuthenticatedRoute user={user} path='/blogs/:id/comments/:id' render={(props) => (
           )} /> */}
-          
+          <Route path='/aboutus' render={() => (
+            <AboutUs  />
+          )} />
+         
 
         </main>
         {/* <Footer /> */}

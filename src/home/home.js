@@ -12,11 +12,12 @@ export class Home extends Component{
                 <div class="block x3">
                     <img src='https://drsdlaw.org/templates/sdadvocacycom/2018/images/blog-icon.png'/>
                     <Link to='/blogs'><span>My Blogs</span></Link></div>
-                <div class="block x4"> مجلة افاق </div>
+                <div class="block x4"> <Link to='/aboutus'><p>About Us</p></Link></div>
                 <div class="block x5"><Link to='/blogs-all'><p>Afaq Blog</p></Link>
             </div>      
             </div>
             </div>
+            
          )
     }
 }
