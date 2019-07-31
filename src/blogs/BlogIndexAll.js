@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { indexAll} from './api'
 import { Link } from 'react-router-dom'
 import './blog.scss'
+import ReadMoreReact from 'read-more-react';
 
 
 class BlogsIndexAll extends Component {
@@ -23,28 +24,33 @@ class BlogsIndexAll extends Component {
     render() {
 
         return (
-            <div>
-                {this.state.blogs.map((blog, index) => (
-                            <div key={index} className="card mb-3 " >
-                               <div className="row no-gutters">
-     
-                                     <div className="col-md-4">
-                                        <img src={blog.img} className="card-img" alt="#" />
-                                    </div>
+            <div >
+                <h3 className="h3">Afaq Blogs</h3>
+    <div className="mainCard">
+        {this.state.blogs.map((blog, index) => (
+            <div key={index} className="card mb-3 " >
+                <div className="row no-gutters">
+                    <div className="col-md-4">
+                    <img src={blog.img} className="card-img" alt="#" />
+                </div>
+                <div className="col-md-8">
+                    <div className="card-body">
+                        <h4 className="card-title">{blog.title}</h4>
+                          {/* <p className="card-text"><small className="text-muted">created at: {blog.createdAt}</small></p> */}
+                            <p className="card-text"><ReadMoreReact text={blog.text} /> </p>
+                        <Link to={`/blogsShow-all/${blog._id}`}> <p>Read More </p></Link>
+                <p className="card-text"><small className="text-muted">Last updated: {blog.updatedAt}</small></p>
+                            <p className="card-text"><small className="text-muted"> by: {blog.author} </small></p>
 
-                                    <div className="col-md-8">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{blog.title}</h5>
-                                            <p className="card-text">{blog.text}</p>
-                                            <Link to={`/blogsShow-all/${blog._id}`}> <h5>Read </h5></Link>
-                                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
+                    </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                ) )}
+                    </div>
+                </div>
             </div>
+        ) )}
+    </div>
+            </div>
+
         )
     }
 

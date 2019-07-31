@@ -8,7 +8,7 @@ const authenticatedOptions = (
     <Link to="/change-password"><p>Change Password</p></Link>
     <Link to="/sign-out"><p>Sign Out</p></Link>
     <Link to='/create'><p>Create</p></Link>
-    {/* <Link to='/aboutus'><p>About Us</p></Link> */}
+    <Link to='/members'><p>Afaq Members</p></Link>
 
     {/* <Link to='/blogs'><p>Blogs</p></Link> */}
   

@@ -48,13 +48,15 @@ class BlogsIndex extends Component {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h3 className="card-title">{blog.title}</h3>
+                                    <p className="card-text"><small className="text-muted">created at:{blog.createdAt}</small></p>
+
                                     {/* //////////// */}
                                     <strong className="card-title">By: {blog.author} </strong> 
                                     {/* ////////////// */}
                                     <p className="card-text">{blog.text}</p>
                                     <Link to={`/blogs/${blog._id}`}> <h5>Read </h5></Link>
                                    
-                                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                    <p className="card-text"><small className="text-muted">Last updated:{blog.updatedAt}</small></p>
                                         {blog.timestamps}
                                      <button onClick={() => this.destroy(blog._id)}>Delete</button>
 

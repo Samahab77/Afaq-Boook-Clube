@@ -19,7 +19,8 @@ import SignUpAdmin from './auth/components/SignUpAdmin';
 import { Home } from './home/home';
 import Footer from './footer/Footer'
 import AboutUs from './AboutUs'
-
+import MemberIndex from './member/MemberIndex'
+import MemberShow from './member/MemberShow'
 class App extends Component {
   constructor () {
     super()
@@ -56,7 +57,7 @@ class App extends Component {
             <SignUpAdmin alert={this.alert} setUser={this.setUser} />
           )} />
           <Route path='/sign-in' render={() => (
-            <SignIn  setUser={this.setUser} />
+            <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
           <Route user={user} path='/blogs-all' component={BlogsIndexAll} />
           <Route excact path='/blogsShow-all/:id' render={(props) =>(
@@ -78,21 +79,28 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/blogs/:id' render={(props) => (
             <BlogShow user={user} blogId={props.match.params.id} />
           )} />
+          <AuthenticatedRoute user={user} path='/user/:id' render={(props) => (
+            <MemberShow user={user} memberId={props.match.params.id} />
+          )} />
+          
           <AuthenticatedRoute user={user} path='/create' render={() => (
             <BlogCreate user={user}  />
           )} />
           <AuthenticatedRoute user={user} path='/blogs/:id/edit' render={() => (
             <BlogEdit user={user} />
           )} />
-          {/* <AuthenticatedRoute user={user} path='/blogs/:id/comments/:id' render={(props) => (
-          )} /> */}
+
+          <AuthenticatedRoute user={user} path='/members' render={() => (
+            <MemberIndex user={user}  /> 
+          )} />
+          
           <Route path='/aboutus' render={() => (
             <AboutUs  />
           )} />
          
-
+ 
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </React.Fragment>
     )
   }
