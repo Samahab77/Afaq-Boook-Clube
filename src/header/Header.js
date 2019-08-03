@@ -5,10 +5,10 @@ import './Header.scss'
 
 const authenticatedOptions = (
   <React.Fragment>
-    <Link to="/change-password"><p>Change Password</p></Link>
-    <Link to="/sign-out"><p>Sign Out</p></Link>
-    <Link to='/create'><p>Create</p></Link>
-    <Link to='/members'><p>Afaq Members</p></Link>
+    <Link to="/change-password"><p>تغير كلمة المرور</p></Link>
+    <Link to="/sign-out"><p>تسجيل الخروج</p></Link>
+    <Link to='/create'><p>انشاء مدونة</p></Link>
+    <Link to='/members'><p>اعضاء آفاق </p></Link>
 
     {/* <Link to='/blogs'><p>Blogs</p></Link> */}
   
@@ -26,7 +26,7 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <React.Fragment>
-    <Link to="/"><p>Home</p></Link>
+    <Link to="/"><p>الصفحة الرئيسية</p></Link>
     {/* <Link to='/blogs-all'>All Blogs</Link>  */}
 
   </React.Fragment>
@@ -36,7 +36,7 @@ const Header = ({ user }) => (
   <header className="main-header">
     <img src='https://afaqbookclubhome.files.wordpress.com/2019/02/cropped-d8b4d8b9d8a7d8b1-d986d8a7d8afd98a-d8a2d981d8a7d982-d8a7d984d982d8b1d8a2d8a1d8a9-1.png' alt=""/>
     <nav>
-      {user && <p>Welcome, {user.name} {
+      {user && <p>مرحبا بك , {user.name} {
 }</p>}
       { user ? authenticatedOptions : unauthenticatedOptions }
       { alwaysOptions }

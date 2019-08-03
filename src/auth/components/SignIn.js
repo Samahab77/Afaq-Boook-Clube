@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import {Link, withRouter } from 'react-router-dom'
 
 import { signIn } from '../api'
 import messages from '../messages'
@@ -38,9 +38,10 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
+      <div>
       <form className='auth-form' onSubmit={this.onSignIn}>
-        <h3>Sign In</h3>
-        <label htmlFor="email">Email</label>
+        <h3>تسجيل الدخول </h3>
+        <label htmlFor="email">البريد الإليكتروني</label>
         <input
           required
           type="email"
@@ -49,7 +50,7 @@ class SignIn extends Component {
           placeholder="Email"
           onChange={this.handleChange}
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">كلمة المرور</label>
         <input
           required
           name="password"
@@ -58,8 +59,10 @@ class SignIn extends Component {
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <button type="submit">Sign In</button>
+        <button type="submit">تسجيل الدخول</button>
       </form>
+      <button className="bl"><Link to="/sign-up"><p>انشاء حساب</p></Link></button> 
+</div>
     )
   }
 }

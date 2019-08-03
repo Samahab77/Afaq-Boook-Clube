@@ -73,9 +73,7 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/blogs' render={() => (
             <BlogsIndex user={user} />
           )} />
-        {/* //////////// */}
          
-         {/* ////////////////////// */}
           <AuthenticatedRoute user={user} path='/blogs/:id' render={(props) => (
             <BlogShow user={user} blogId={props.match.params.id} />
           )} />

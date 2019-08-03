@@ -46,8 +46,8 @@ class SignUp extends Component {
     return (
       <div>
       <form className='auth-form' onSubmit={this.onSignUp}>
-        <h3>Sign Up as User</h3>
-        <label >User Name:</label>
+        <h3>انشاء حساب جديد</h3>
+        <label >اسم المستخدم:</label>
         <input
           required
           name="name"
@@ -56,7 +56,7 @@ class SignUp extends Component {
           placeholder="User Name:"
           onChange={this.handleChange}
         />
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">البريد الإلكتروني</label>
         <input
           required
           name="email"
@@ -65,7 +65,7 @@ class SignUp extends Component {
           placeholder="example@example.com"
           onChange={this.handleChange}
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">كلمة المرور </label>
         <input
           required
           name="password"
@@ -74,7 +74,7 @@ class SignUp extends Component {
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <label htmlFor="passwordConfirmation">Confirm Password</label>
+        <label htmlFor="passwordConfirmation">تأكيد كلمة المرور </label>
         <input
           required
           name="passwordConfirmation"
@@ -83,7 +83,7 @@ class SignUp extends Component {
           placeholder="Confirm Password"
           onChange={this.handleChange}
         />
-        <label >City:</label>
+        <label >المدينة:</label>
         <input
           required
           name="city"
@@ -92,7 +92,7 @@ class SignUp extends Component {
           placeholder="city"
           onChange={this.handleChange}
         />
-        <label >phone_num</label>
+        <label >رقم الجوال</label>
         <input
           
           name="phone_num"
@@ -101,10 +101,10 @@ class SignUp extends Component {
           placeholder="9665XXXXXXXX"
           onChange={this.handleChange}
         />
-        <button type="submit">Sign Up</button>
-          <button ><Link to="/sign-in">Sign In</Link></button>
+        <button type="submit">انشاء حساب </button>
       </form>
-   
+        <button className="bl"  ><Link to="/sign-in">تسجيل الدخول</Link></button>
+
  </div>
     )
   }

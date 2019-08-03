@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { show } from './api';
-import { withRouter } from 'react-router-dom'
+import {Link,  withRouter } from 'react-router-dom'
+import ReadMoreReact from 'read-more-react';
 
 
 class MemberShow extends Component {
@@ -32,15 +33,40 @@ class MemberShow extends Component {
             
             <div>
                 <div>
-                    <h1>{this.state.member.email}</h1>
-                    <h1>{this.state.member.name}</h1>
+                    <h4>{this.state.member.email}</h4>
+                    <h4>{this.state.member.name}</h4>
                     <ul>
                         {this.state.member.blogs ? 
                             this.state.member.blogs.map((blog, index) => (
-                                <React.Fragment>
-                                    <h1>Title: {blog.title}</h1>
-                                    <p>Text: {blog.text}</p>
-                                </React.Fragment>
+
+                                <div key={index} className="card mb-3 " >
+                                    {/* <button onClick={() => this.destroy(blog._id)}>Delete</button> */}
+
+                                    <div className="row no-gutters">
+                                        <div className="col-md-4">
+                                            <img src={blog.img} className="card-img" alt="#" />
+                                        </div>
+                                        <div className="col-md-8">
+                                            <div className="card-body">
+                                                <h4 className="card-title">{blog.title}</h4>
+                                                {/* <p className="card-text"><small className="text-muted">created at: {blog.createdAt}</small></p> */}
+                                                <p className="card-text"><ReadMoreReact text={blog.text} /> </p>
+                                                <Link to={`/blogs/${blog._id}`}> <p>Read More </p></Link>
+                                                <p className="card-text"><small className="text-muted">Last updated: {blog.updatedAt}</small></p>
+                                                <p className="card-text"><small className="text-muted"> by: {blog.author} </small></p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                // <React.Fragment>
+                                //     <h1>Title: {blog.title}</h1>
+                                //     <img src={blog.img} />
+                                //     <p>Text: {blog.text}</p>
+                                //     <hr />
+
+                                // </React.Fragment>
                                 ))
                             
                             :

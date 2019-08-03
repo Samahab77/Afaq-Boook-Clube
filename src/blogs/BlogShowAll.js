@@ -49,20 +49,12 @@ class BlogShowAll extends Component {
                 
             </div>
             <div>
-            {/* <CommentIndex user={this.props.user} key={id} blogId={id}/> */}
             </div>
                 <div>
-                    
+    
                     <CommentIndex user={this.props.user} key={id} blogId={id} />
-                    {/* <CommentCreate updateComment={this.updateComment} user={this.props.user} blogId={this.props.blogId} /> */}
 
                 </div>
-                {/* <Link to='/blogs/blog:_id/comments'  >Create</Link>
-                <Route path='/blogs/blog:_id/comments'  component={CommentCreate} /> */}
-
-                
-                {/* <CommentShow user={this.props.user} blogId={id} key={id} /> */}
-
             </div>
 
         )

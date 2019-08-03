@@ -40,7 +40,7 @@ class BlogShow extends Component {
                 </div>
                     <Link to={`/blogs/${id}/edit`}><button>Edit</button></Link>
             </div>
-                {/* <Link to={`/blogs/${id}/edit`}><button>Edit</button></Link> */}
+                <Link to={`/blogs/${id}/edit`}><button>Edit</button></Link>
 
             <div>
             <CommentIndex user={this.props.user} key={id} blogId={id}/>
