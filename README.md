@@ -1,9 +1,9 @@
-# Name of your APP
+# APP Name
 
 Afaq Club Reader 
 
 ## Web Application Description 
-    refrence for book club meetup by adding books readed by club members storing member blog and commint on it by other member hows regester in the website 
+ refrence for book club meetup by adding books readed by club members storing member blog and commint on it by other member hows regester in the website 
 for this aplication we focused on afaq blogs features ,which for 
 - unregistered user can  see all users blog posts.
 - unregistered user can see the comment related to the blogs 
@@ -46,10 +46,6 @@ unregistered user can  see all users blog posts.
 
 
 ## Wireframes
-
-
-
-
 
 ## Technologies
 react 
