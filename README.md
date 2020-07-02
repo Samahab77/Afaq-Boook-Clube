@@ -1,4 +1,4 @@
-# APP Name
+# Afaq book clube
 
 Afaq Club Reader 
 
